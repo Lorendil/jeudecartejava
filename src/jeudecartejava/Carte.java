@@ -42,17 +42,23 @@ public class Carte {
 		
 	}
 
-	public static void compare(Carte carte1, Carte carte2) {
+	public static comparaison compare(Carte carte1, Carte carte2) {
 		if (carte1.chiffre > carte2.chiffre) {
 			System.out.println("La carte la plus forte est le " + carte1.chiffre + " de " + carte1.couleur);
+			return comparaison.SUPERIEUR;
 		} else if (carte1.chiffre < carte2.chiffre) {
 			System.out.println("La carte la plus forte est le " + carte2.chiffre + " de " + carte2.couleur);
+			return comparaison.INFERIEUR;
 		} else if (carte1.couleurvaleur > carte2.couleurvaleur) {
 			System.out.println("La carte la plus forte est le " + carte1.chiffre + " de " + carte1.couleur);
+			return comparaison.SUPERIEUR;
 		} else if (carte1.couleurvaleur < carte2.couleurvaleur) {
 			System.out.println("La carte la plus forte est le " + carte2.chiffre + " de " + carte2.couleur);
+			return comparaison.INFERIEUR;
 		} else {
 			System.out.println("C'est juste la même carte en fait... le " + carte2.chiffre + " de " + carte2.couleur);
+			return comparaison.EGALITE;
 		}
+		
 	}
 }
