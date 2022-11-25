@@ -20,6 +20,12 @@ public class Carte {
 
 	}
 
+	enum comparaison {
+		SUPERIEUR,
+		INFERIEUR,
+		EGALITE
+	}
+
 	public static void print(Carte carte) {
 		if (carte.chiffre < 11) {
 			System.out.println(carte.chiffre + " de " + carte.couleur);
