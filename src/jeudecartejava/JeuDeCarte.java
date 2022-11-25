@@ -19,7 +19,7 @@ public class JeuDeCarte {
 		for (int i = 0; i < listeDesJoueurs.size(); i++){
 			System.out.println(listeDesJoueurs.get(i).nom);
 		}
-		bataille(52, listeDesJoueurs);
+		bataille(54, listeDesJoueurs);
 
 	}
 
@@ -28,7 +28,7 @@ public class JeuDeCarte {
 
 		if (nombreDeTours > listeJoueurs.get(0).deck.length){
 			nombreDeTours = listeJoueurs.get(0).deck.length;
-			System.out.println("Le nombre de tours ne peut pas exceder les cartes des paquet, le nombre de tours est rabaissé à " + nombreDeTours + " tours.");
+			System.out.println("Le nombre de tours ne peut pas exceder les cartes des paquets, le nombre de tours est rabaissé à " + nombreDeTours + " tours.");
 		}
 		while (tour < nombreDeTours) {
 
