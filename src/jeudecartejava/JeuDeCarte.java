@@ -1,38 +1,39 @@
 package jeudecartejava;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JeuDeCarte {
-	private static Scanner nom;
+
 
 	public static void main(String[] args) {
-		Map<String, Joueur> listeDesJoueurs = new HashMap<String, Joueur>();
+		List<Joueur> listeDesJoueurs = new ArrayList<Joueur>();
 		int nombreDeJoueurs = 0;
 
 		while (nombreDeJoueurs != 2) {
-			String nomNouveauJoueur = initialisation();
-			Joueur nouveauJoueur = new Joueur(nomNouveauJoueur);
-			listeDesJoueurs.put(nomNouveauJoueur, nouveauJoueur);
+
+			Joueur nouveauJoueur = new Joueur();
+			listeDesJoueurs.add(nouveauJoueur);
 			nombreDeJoueurs += 1;
 		}
-		for (Map.Entry<String, Joueur> clef : listeDesJoueurs.entrySet()) {
-			Joueur clefJoueur = clef.getValue();
-			Carte.print(clefJoueur.deck[1]);
+		for (int i = 0; i < listeDesJoueurs.size(); i++){
+			System.out.println(listeDesJoueurs.get(i).nom);
 		}
+		bataille(52, listeDesJoueurs);
 
 	}
 
-	private static String initialisation() {
+	private static void bataille(int nombreDeTours, List<Joueur> listeJoueurs) {
+		int tour = 0;
 
-		nom = new Scanner(System.in);
-		System.out.print("Entrez le nom du joueur \n");
+		if (nombreDeTours > listeJoueurs.get(0).deck.length){
+			nombreDeTours = listeJoueurs.get(0).deck.length;
+			System.out.println("Le nombre de tours ne peut pas exceder les cartes des paquet, le nombre de tours est rabaissé à " + nombreDeTours + " tours.");
+		}
+		while (tour < nombreDeTours) {
 
-		String nomJoueur = nom.nextLine();
-		// nom.close();
 
-		return nomJoueur;
-
+			tour =+ 1;
+		}
 	}
 }

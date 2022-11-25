@@ -1,12 +1,30 @@
 package jeudecartejava;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
 public class Joueur {
+
+	private static Scanner scanNom;
+
 	String nom;
 	Carte[] deck;
 
-	public Joueur(String nom) {
-		this.nom = nom;
+	public Joueur() {
+		this.nom = Joueur.initialisation();
 		this.deck = Joueur.createdeck();
+
+	}
+	private static String initialisation() {
+
+		scanNom = new Scanner(System.in);
+		System.out.print("Entrez le nom du joueur \n");
+
+		String nomJoueur = scanNom.nextLine();
+		//nom.close();
+		return nomJoueur;
 
 	}
 
@@ -38,6 +56,14 @@ public class Joueur {
 			entreedeck += 1;
 			nombreCartes += 1;
 		}
+		deck = melangeDeck(deck);
+		return deck;
+	}
+	private static Carte[] melangeDeck(Carte [] deck) {
+		List<Carte> deckList = Arrays.asList(deck);
+
+		Collections.shuffle(deckList);
+		deckList.toArray(deck);
 		return deck;
 	}
 }
