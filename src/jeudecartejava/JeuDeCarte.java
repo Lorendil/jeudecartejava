@@ -44,7 +44,7 @@ public class JeuDeCarte {
 					+ "\n" + listeJoueurs.get(0).nom + " : " + listeJoueurs.get(0).deck[tour]);
 			System.out.println(listeJoueurs.get(1).nom +" : " + listeJoueurs.get(1).deck[tour] + "\n");
 
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.MILLISECONDS.sleep(500);
 			tour += 1;
 		}
 		System.out.println("Le score est de " + scoreJoueurs[0] + " à " + scoreJoueurs[1] + " après " + nombreDeTours
