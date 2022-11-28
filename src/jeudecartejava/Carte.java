@@ -26,6 +26,22 @@ public class Carte {
 		EGALITE
 	}
 
+	public String toString() {
+		if (this.chiffre < 11) {
+			return (this.chiffre + " de " + this.couleur);
+		}
+		else if (this.chiffre == 11) {
+			return ("Valet de " + this.couleur);
+		}
+		else if (this.chiffre == 12) {
+			return ("Dame de " + this.couleur);
+		}
+		else if (this.chiffre == 13) {
+			return ("Roi de " + this.couleur);
+		}
+		return ("Erreur sur la carte");
+	}
+
 	public static void print(Carte carte) {
 		if (carte.chiffre < 11) {
 			System.out.println(carte.chiffre + " de " + carte.couleur);

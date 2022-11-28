@@ -14,7 +14,7 @@ public class Joueur {
 
 	public Joueur() {
 		this.nom = Joueur.initialisation();
-		this.deck = Joueur.createdeck();
+		this.deck = createdeck();
 
 	}
 	private static String initialisation() {
@@ -28,7 +28,7 @@ public class Joueur {
 
 	}
 
-	private static Carte[] createdeck() {
+	private Carte[] createdeck() {
 		Carte[] deck = new Carte[52];
 		int entreedeck = 0;
 		int changecouleur = 1;

@@ -32,8 +32,13 @@ public class JeuDeCarte {
 		}
 		while (tour < nombreDeTours) {
 
+			Carte.compare(listeJoueurs.get(0).deck[tour], listeJoueurs.get(1).deck[tour]);
 
-			tour =+ 1;
+			System.out.println("Tour n°"+tour+"\nJoueur 1");
+			System.out.println(listeJoueurs.get(0).deck[tour]);
+			System.out.println("Joueur 2");
+			System.out.println(listeJoueurs.get(1).deck[tour] + "\n");
+			tour += 1;
 		}
 	}
 }
