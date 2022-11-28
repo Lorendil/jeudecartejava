@@ -17,13 +17,14 @@ public class Joueur {
 		this.deck = createdeck();
 
 	}
+
 	private static String initialisation() {
 
 		scanNom = new Scanner(System.in);
 		System.out.print("Entrez le nom du joueur \n");
 
 		String nomJoueur = scanNom.nextLine();
-		//nom.close();
+		// nom.close();
 		return nomJoueur;
 
 	}
@@ -59,7 +60,8 @@ public class Joueur {
 		deck = melangeDeck(deck);
 		return deck;
 	}
-	private static Carte[] melangeDeck(Carte [] deck) {
+
+	private static Carte[] melangeDeck(Carte[] deck) {
 		List<Carte> deckList = Arrays.asList(deck);
 
 		Collections.shuffle(deckList);
