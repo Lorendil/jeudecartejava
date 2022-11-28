@@ -13,20 +13,17 @@ public class Joueur {
 	Carte[] deck;
 
 	public Joueur() {
-		this.nom = Joueur.initialisation();
+		initialisation();
 		this.deck = createdeck();
 
 	}
 
-	private static String initialisation() {
+	private void initialisation() {
 
 		scanNom = new Scanner(System.in);
 		System.out.print("Entrez le nom du joueur \n");
 
-		String nomJoueur = scanNom.nextLine();
-		// nom.close();
-		return nomJoueur;
-
+		this.nom = scanNom.nextLine();
 	}
 
 	private Carte[] createdeck() {
