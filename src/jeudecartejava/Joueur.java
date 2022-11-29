@@ -15,6 +15,7 @@ public class Joueur {
 	public Joueur() {
 		initialisation();
 		this.deck = createdeck();
+		melangeDeck();
 
 	}
 
@@ -54,15 +55,14 @@ public class Joueur {
 			entreedeck += 1;
 			nombreCartes += 1;
 		}
-		deck = melangeDeck(deck);
 		return deck;
 	}
 
-	private static Carte[] melangeDeck(Carte[] deck) {
-		List<Carte> deckList = Arrays.asList(deck);
+	private void melangeDeck() {
+		List<Carte> deckList = Arrays.asList(this.deck);
 
 		Collections.shuffle(deckList);
-		deckList.toArray(deck);
-		return deck;
+		deckList.toArray(this.deck);
+		
 	}
 }
